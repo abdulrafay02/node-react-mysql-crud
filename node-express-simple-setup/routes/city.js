@@ -78,10 +78,7 @@ router.post('/city_create', (req, res) => {
             return;
             //throw err;
         }
-        if (rows)
-            console.log("Inserted a new City with Id: ", rows.insertId);
-        else
-            console.log("db returned empty array");
+        console.log("Inserted a new City with Id: ", rows.insertId);
     });
 
     res.end();
