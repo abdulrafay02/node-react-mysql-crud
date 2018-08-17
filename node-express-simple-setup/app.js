@@ -101,7 +101,7 @@ app.post('/city_create', (req, res) => {
       //throw err;
     }
     if (rows)
-      console.log("Inserted a new City with Id: ", rows.insertedId);
+      console.log("Inserted a new City with Id: ", rows.insertId);
     else
       console.log("db returned empty array");
   });
