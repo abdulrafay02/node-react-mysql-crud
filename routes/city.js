@@ -32,7 +32,7 @@ router.get('/cities', (req, res) => {
             res.json(cities);
         }
         else
-            console.log("db returned empty array");
+            console.log("db returned empty array!");
     });
 
     //res.end();
@@ -57,7 +57,7 @@ router.get('/city/:id', (req, res) => {
             res.json(cities);
         }
         else
-            console.log("db returned empty array");
+            console.log("db returned empty array!");
     });
 
     //res.end();
