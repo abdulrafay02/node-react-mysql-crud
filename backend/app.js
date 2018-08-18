@@ -1,11 +1,13 @@
 //load app server with express
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const morgan = require('morgan');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const cityRouter = require('./routes/city.js');
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('./public'));
 app.use(morgan('short'));
@@ -19,5 +21,5 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3003
 //localhost:PORT
 app.listen(PORT, () => {
-  console.log('Server is listening on: ', PORT);
+  console.log('Server is listening on:', PORT);
 });

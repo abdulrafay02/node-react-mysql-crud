@@ -65,15 +65,16 @@ router.get('/city/:id', (req, res) => {
 
 router.post('/city_create', (req, res) => {
     console.log("Trying to create new city...")
-    const name = req.body.create_name;
-    const district = req.body.create_district;
-    const population = req.body.create_population;
+    const { create_name, create_district, create_population } = req.body;
+    //const name = req.body.create_name;
+    //const district = req.body.create_district;
+    //const population = req.body.create_population;
     const queryString = "INSERT INTO city (Name, District, Population, CountryCode) VALUES (?,?,?,'PAK')";
 
-    getConnection().query(queryString, [name, district, population], (err, rows, fields) => {
-        console.log(name, district, population);
+    getConnection().query(queryString, [create_name, create_district, create_population], (err, rows, fields) => {
+        console.log(create_name, create_district, create_population);
         if (err) {
-            console.log('A db error occurred: ' + err);
+            console.log('A db error occurred:' + err);
             res.sendStatus(500);
             return;
             //throw err;
