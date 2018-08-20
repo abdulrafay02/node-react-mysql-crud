@@ -8,7 +8,8 @@ const bodyParser = require('body-parser');
 const cityRouter = require('./routes/city.js');
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
 app.use(express.static('./public'));
 app.use(morgan('short'));
 app.use(cityRouter);
